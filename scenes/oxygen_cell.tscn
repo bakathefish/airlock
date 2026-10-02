@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://d0t24wvkaeen7"]
+
+[ext_resource type="Script" uid="uid://c3oitqqsgduuc" path="res://scripts/oxygen_cell.gd" id="1_oxohr"]
+[ext_resource type="Texture2D" uid="uid://rsrpqhad0n70" path="res://assets/sprites/tilemap.png" id="1_to4ko"]
+[ext_resource type="AudioStream" uid="uid://ct5lxilantiss" path="res://assets/sounds/collect.ogg" id="2_oxohr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w7uaa"]
+
+[node name="OxygenCell" type="Area2D" unique_id=2084392896]
+script = ExtResource("1_oxohr")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1099508524]
+texture = ExtResource("1_to4ko")
+hframes = 20
+vframes = 9
+frame = 67
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1126563464]
+shape = SubResource("RectangleShape2D_w7uaa")
+
+[node name="CollectSound" type="AudioStreamPlayer" parent="." unique_id=1901807853]
+stream = ExtResource("2_oxohr")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

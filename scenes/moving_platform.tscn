@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://6l06hr1tx8dr"]
+
+[ext_resource type="Script" uid="uid://bxynwhv1623tt" path="res://scripts/moving_platform.gd" id="1_hrpga"]
+[ext_resource type="Texture2D" uid="uid://btad17v5ke5ka" path="res://assets/sprites/tilemap_industrial.png" id="2_f8lbu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oaxfr"]
+size = Vector2(54, 18)
+
+[node name="MovingPlatform" type="AnimatableBody2D" unique_id=1457885333]
+script = ExtResource("1_hrpga")
+
+[node name="Left" type="Sprite2D" parent="." unique_id=46176437]
+position = Vector2(-18, 0)
+texture = ExtResource("2_f8lbu")
+hframes = 16
+vframes = 7
+frame = 84
+
+[node name="Middle" type="Sprite2D" parent="." unique_id=1273021504]
+texture = ExtResource("2_f8lbu")
+hframes = 16
+vframes = 7
+frame = 85
+
+[node name="Right" type="Sprite2D" parent="." unique_id=278830828]
+position = Vector2(18, 0)
+texture = ExtResource("2_f8lbu")
+hframes = 16
+vframes = 7
+frame = 86
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1293995921]
+shape = SubResource("RectangleShape2D_oaxfr")

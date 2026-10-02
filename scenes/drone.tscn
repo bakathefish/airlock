@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://duffd2jafpp46"]
+
+[ext_resource type="Script" uid="uid://bi2btmqs3julk" path="res://scripts/drone.gd" id="1_d5du7"]
+[ext_resource type="Texture2D" uid="uid://b275qn30vl3sx" path="res://assets/sprites/characters.png" id="1_uvgqj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w7uaa"]
+
+[node name="Drone" type="Area2D" unique_id=353754173]
+script = ExtResource("1_d5du7")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=354082000]
+texture = ExtResource("1_uvgqj")
+hframes = 9
+vframes = 3
+frame = 24
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2111810922]
+shape = SubResource("RectangleShape2D_w7uaa")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

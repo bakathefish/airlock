@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bu6hgfjacxd5l"]
+
+[ext_resource type="Script" uid="uid://ilbvr67maa1s" path="res://scripts/gravity_switch.gd" id="1_aae3q"]
+[ext_resource type="Texture2D" uid="uid://rsrpqhad0n70" path="res://assets/sprites/tilemap.png" id="2_ri4co"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_01wb7"]
+
+[node name="GravitySwitch" type="Area2D" unique_id=440563763]
+script = ExtResource("1_aae3q")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1544041866]
+texture = ExtResource("2_ri4co")
+hframes = 20
+vframes = 9
+frame = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2002664599]
+shape = SubResource("RectangleShape2D_01wb7")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

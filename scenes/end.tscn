@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://c5l4tcfcbq3w1"]
+
+[ext_resource type="Script" uid="uid://d2c4xv6u2w72x" path="res://scripts/end.gd" id="1_n735c"]
+
+[node name="End" type="Control" unique_id=629239099]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_n735c")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2114466502]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.078431375, 0.09411765, 0.16862746, 1)
+
+[node name="Label" type="Label" parent="." unique_id=1698495716]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Airlock open. You made it!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=906692491]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -43.5
+offset_top = 48.0
+offset_right = 43.5
+offset_bottom = 79.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Play again"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

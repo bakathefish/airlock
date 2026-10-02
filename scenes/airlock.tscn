@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://hx04qgujsejp"]
+
+[ext_resource type="Texture2D" uid="uid://btad17v5ke5ka" path="res://assets/sprites/tilemap_industrial.png" id="1_bc5nu"]
+[ext_resource type="Script" uid="uid://vxgg1g62hp68" path="res://scripts/airlock.gd" id="1_kypar"]
+[ext_resource type="AudioStream" uid="uid://ci7u5omg5o50m" path="res://assets/sounds/airlock.ogg" id="2_kypar"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w7uaa"]
+
+[node name="Airlock" type="Area2D" unique_id=843607141]
+script = ExtResource("1_kypar")
+
+[node name="DoorTop" type="Sprite2D" parent="." unique_id=1341644182]
+position = Vector2(0, -9)
+texture = ExtResource("1_bc5nu")
+hframes = 16
+vframes = 7
+frame = 28
+
+[node name="DoorBottom" type="Sprite2D" parent="." unique_id=1081111849]
+position = Vector2(0, 9)
+texture = ExtResource("1_bc5nu")
+hframes = 16
+vframes = 7
+frame = 44
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1968382283]
+shape = SubResource("RectangleShape2D_w7uaa")
+
+[node name="OpenSound" type="AudioStreamPlayer" parent="." unique_id=1425502526]
+stream = ExtResource("2_kypar")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

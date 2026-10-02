@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://duqap3ft4yajn"]
+
+[ext_resource type="Texture2D" uid="uid://b275qn30vl3sx" path="res://assets/sprites/characters.png" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://04dspkloml71" path="res://scripts/player.gd" id="1_onrkg"]
+[ext_resource type="AudioStream" uid="uid://hr0kymrab7rv" path="res://assets/sounds/jump.ogg" id="3_i3pqv"]
+[ext_resource type="AudioStream" uid="uid://wgcc1f138422" path="res://assets/sounds/death.ogg" id="4_hqtel"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w7uaa"]
+
+[node name="Player" type="CharacterBody2D" unique_id=1868113593]
+script = ExtResource("1_onrkg")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1757620395]
+texture = ExtResource("1_4flbx")
+hframes = 9
+vframes = 3
+frame = 9
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1474923862]
+shape = SubResource("RectangleShape2D_w7uaa")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=88019791]
+zoom = Vector2(3, 3)
+position_smoothing_enabled = true
+
+[node name="JumpSound" type="AudioStreamPlayer" parent="." unique_id=2020851189]
+stream = ExtResource("3_i3pqv")
+
+[node name="DeathSound" type="AudioStreamPlayer" parent="." unique_id=1212926789]
+stream = ExtResource("4_hqtel")
+
+[node name="FlipSound" type="AudioStreamPlayer" parent="." unique_id=1303981248]
+stream = ExtResource("3_i3pqv")
+pitch_scale = 0.6

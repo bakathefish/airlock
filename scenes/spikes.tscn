@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bchop4bev3ol0"]
+
+[ext_resource type="Script" uid="uid://bjxg4s186vev3" path="res://scripts/spikes.gd" id="1_nrdsm"]
+[ext_resource type="Texture2D" uid="uid://rsrpqhad0n70" path="res://assets/sprites/tilemap.png" id="1_s0g1x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w7uaa"]
+
+[node name="Spikes" type="Area2D" unique_id=1526746078]
+script = ExtResource("1_nrdsm")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2117663622]
+texture = ExtResource("1_s0g1x")
+hframes = 20
+vframes = 9
+frame = 68
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1052471520]
+shape = SubResource("RectangleShape2D_w7uaa")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
